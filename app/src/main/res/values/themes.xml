@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AplicTrianRect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+
+        <!-- Los siguientes colores son os unicos que cambian entre modo claro y oscuro y solo en ciertas pantallas -->
+        <item name="colorSecondary">@color/star_command_blue</item>
+        <item name="colorSecondaryVariant">@color/cyan_process</item>
+        <item name="colorAccent">@color/sapphire_blue</item>
+    </style>
+</resources>

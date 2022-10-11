@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_app_icon"
+        app:titleTextColor="@android:color/transparent">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPractica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/practica_background"
+            android:baselineAligned="false"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp">
+
+            <ImageView
+                android:id="@+id/ivPracticaIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_practica_icon"
+                tools:ignore="ImageContrastCheck"></ImageView>
+
+            <TextView
+                android:id="@+id/tvPractica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/practica_button"
+                android:textColor="@color/star_command_blue"
+                android:textSize="34sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutExamen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/examen_rapido_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp">
+
+            <ImageView
+                android:id="@+id/ivExamenIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="15dp"
+                app:srcCompat="@drawable/ic_examen_rapido_icon"
+                tools:ignore="ImageContrastCheck"></ImageView>
+
+            <TextView
+                android:id="@+id/tvExamen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:singleLine="false"
+                android:text="@string/examen_rapido_button"
+                android:textAlignment="textStart"
+                android:textColor="@color/cyan_process"
+                android:textSize="34sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/historial_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp">
+
+            <ImageView
+                android:id="@+id/ivHistorialIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="15dp"
+                app:srcCompat="@drawable/ic_historial_icon"
+                tools:ignore="ImageContrastCheck"></ImageView>
+
+            <TextView
+                android:id="@+id/tvHistorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/historial_button"
+                android:textColor="@color/navy_blue"
+                android:textSize="34sp"></TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/examen_rapido_background.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/historial_background.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_app_icon.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/ic_examen_rapido_icon.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_examen_rapido_mini_icon.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/ic_practica_icon.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_practica_mini_icon.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/ic_practice_icon.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/practica_background.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/practice_background.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable/resultados_background.xml" value="0.1785" />
+        <entry key="app/src/main/res/layout/activity_creditos.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/activity_examen_forms.xml" value="0.2373809814453125" />
+        <entry key="app/src/main/res/layout/activity_historial.xml" value="0.32952880859375006" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3425384521484375" />
+        <entry key="app/src/main/res/layout/activity_practica_forms.xml" value="0.37293548583984376" />
+        <entry key="app/src/main/res/layout/activity_pregunta_examen.xml" value="0.33814086914062497" />
+        <entry key="app/src/main/res/layout/activity_pregunta_practica.xml" value="0.3569732666015626" />
+        <entry key="app/src/main/res/layout/activity_resultados.xml" value="0.2889617919921874" />
+        <entry key="app/src/main/res/layout/fragment_creditos.xml" value="0.34114379882812507" />
+        <entry key="app/src/main/res/layout/record_item.xml" value="0.34794158935546876" />
+        <entry key="app/src/main/res/layout/record_practice_item.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/record_test_item.xml" value="0.21875" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.3333333333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

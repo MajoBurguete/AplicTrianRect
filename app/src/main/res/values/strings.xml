@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">AplicTrianRect</string>
+    <string name="practica_button">Práctica</string>
+    <string name="examen_rapido_button">Examen \n rápido</string>
+    <string name="historial_button">Historial</string>
+    <string name="name_label">Nombre</string>
+    <string name="id_label">Número de identificación</string>
+    <string name="group_label">Grupo</string>
+    <string name="start_label">Iniciar</string>
+    <string name="answer_label">Escribe tu respuesta</string>
+    <string name="check_label">Revisa</string>
+    <string name="next_label">Siguiente</string>
+    <string name="ready_label">Listo</string>
+    <string name="btn_placeholder">p</string>
+
+    <!-- Practica  -->
+    <string name="practica_description">En esta sección podrás practicar y revisar tu respuesta. En caso de error podrás ver la respuesta correcta. En todos los ejercicios de práctica se muestra en esquema.</string>
+
+    <!-- Examen  -->
+    <string name="examen_title">Examen rápido</string>
+    <string name="examen_description">Resuelve los siguientes problemas. En algunos de los ejercicios se proporciona un esquema. Tienes 10 minutos para resolver 5 ejercicios.</string>
+    <string name="resultados_title">Resultados</string>
+
+    <string name="advertencia">Recuerda llenar todos los campos antes de continuar</string>
+    
+    <!-- Creditos -->
+    <string name="creditos_title">Creditos</string>
+    <string name="app_name_creditos">Aplicación de Triángulos Rectángulos</string>
+    <string name="app_description_creditos">Esta aplicación ha sido desarrollada con el propósito de apoyar a estudiantes de nivel preparatoria en la práctica de ejercicios en los que se aplican los conceptos básicos de trigonometría.</string>
+    <string name="contenido_title_creditos">Diseño de contenido</string>
+    <string name="luz_maria">Ing. Luz María Gregoria González Canales</string>
+    <string name="icono_title_creditos">Diseño de ícono e imágenes</string>
+    <string name="sandra_patricia">Lic. Sandra Patricia Cota Martínez</string>
+    <string name="desarrollo_creditos">Desarrollo</string>
+    <string name="yolanda_martinez">Ing. Yolanda Martínez Treviño</string>
+    <string name="app_distribution_creditos">Aplicación de Triángulos Rectángulos se distribuye como está, de manera gratuita y se prohíbe su distribución y uso con fines de lucro.</string>
+    <string name="actualizacion_creditos">Última actualización</string>
+    <string name="date_creditos">diciembre 2021</string>
+    
+
+</resources>

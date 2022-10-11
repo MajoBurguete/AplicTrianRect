@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AplicTrianRect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <!-- Los siguientes colores son os unicos que cambian entre modo claro y oscuro y solo en ciertas pantallas -->
+        <item name="colorSecondary">@color/columbia_blue</item>
+        <item name="colorSecondaryVariant">@color/sky_blue</item>
+        <item name="colorAccent">@color/cerulean_crayola</item>
+
+    </style>
+</resources>
