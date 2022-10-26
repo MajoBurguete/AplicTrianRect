@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreguntaPracticaActivity">
+    tools:context=".activities.PreguntaPracticaActivity">
+
+    <Chronometer
+        android:id="@+id/practiceCrono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Chronometer>
 
     <ImageButton
         android:id="@+id/ibBackFromPracticeQuestion"
@@ -18,8 +29,8 @@
         app:srcCompat="@drawable/ic_back" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="672dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,25 +65,6 @@
                 android:textSize="28sp" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvPracticaInfo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/practica_background"
-            android:fontFamily="@font/montserrat_regular"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/practica_description"
-            android:textAlignment="center"
-            android:textColor="@color/star_command_blue"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo" />
 
         <ImageView
             android:id="@+id/ivProblema"
@@ -156,6 +148,40 @@
                 android:textSize="20sp"
                 app:cornerRadius="12dp" />
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/ivProblema"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tvPracticaInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/practica_background"
+            android:fontFamily="@font/montserrat_regular"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/practica_description"
+            android:textAlignment="center"
+            android:textColor="@color/star_command_blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

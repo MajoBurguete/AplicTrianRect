@@ -1,4 +1,4 @@
-package com.example.aplictrianrect
+package com.example.aplictrianrect.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.Menu
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.widget.Toolbar
+import com.example.aplictrianrect.R
 
 class MainActivity : AppCompatActivity() {
 

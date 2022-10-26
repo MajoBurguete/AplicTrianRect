@@ -1,31 +1,30 @@
-package com.example.aplictrianrect
+package com.example.aplictrianrect.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import com.example.aplictrianrect.R
 
-class PreguntaExamenActivity : AppCompatActivity() {
+class HistorialActivity : AppCompatActivity() {
 
-    lateinit var ibBackFromTestQuestion: ImageButton
+    lateinit var ibBackFromHistorial: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pregunta_examen)
+        setContentView(R.layout.activity_historial)
 
         // Asignación de variables con los componentes de la UI
-        ibBackFromTestQuestion = findViewById(R.id.ibBackFromPracticeQuestion)
+        ibBackFromHistorial = findViewById(R.id.ibBackFromHistorial)
 
         // Inicialización
 
         // Click listeners
-        ibBackFromTestQuestion.setOnClickListener { backOnClick() }
-
+        ibBackFromHistorial.setOnClickListener { backOnClick() }
     }
 
     fun backOnClick(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-
 }

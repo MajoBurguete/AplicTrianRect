@@ -1,11 +1,14 @@
-package com.example.aplictrianrect
+package com.example.aplictrianrect.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.aplictrianrect.R
 
 class ResultadosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultados)
+
+
     }
 }
