@@ -7,16 +7,14 @@ import java.util.*
 
 @Entity
 data class Historial(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "nombre") val nombre: String,
     @ColumnInfo(name = "ident") val ident: String,
     @ColumnInfo(name = "grupo") val grupo: String,
-    @ColumnInfo(name = "fecha") val fecha: Date,
+    @ColumnInfo(name = "fecha") val fecha: String,
     @ColumnInfo(name = "puntos") val puntos: Int,
     @ColumnInfo(name = "cantEjercicios") val cantEjercicios: Int,
     @ColumnInfo(name = "tipoActividad") val tipoActividad: String,
-    @ColumnInfo(name = "tiempoEnHoras") val tiempoEnHoras: Int,
-    @ColumnInfo(name = "tiempoEnMinutos") val tiempoEnMinutos: Int,
-    @ColumnInfo(name = "tiempoEnSegundos") val tiempoEnSegundos: Int
+    @ColumnInfo(name = "tiempoCronometro") val tiempoCronometro: String
 )
 

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "bc1aa4bfde37b5929a4e8acd677c7d5a",
+    "identityHash": "b2c13b2117dd0f5b12f283adaa2e2575",
     "entities": [
       {
         "tableName": "Historial",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER NOT NULL, `nombre` TEXT NOT NULL, `ident` TEXT NOT NULL, `grupo` TEXT NOT NULL, `fecha` INTEGER NOT NULL, `puntos` INTEGER NOT NULL, `cantEjercicios` INTEGER NOT NULL, `tipoActividad` TEXT NOT NULL, `tiempoEnSegundos` INTEGER NOT NULL, PRIMARY KEY(`uid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `ident` TEXT NOT NULL, `grupo` TEXT NOT NULL, `fecha` TEXT NOT NULL, `puntos` INTEGER NOT NULL, `cantEjercicios` INTEGER NOT NULL, `tipoActividad` TEXT NOT NULL, `tiempoCronometro` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -35,7 +35,7 @@
           {
             "fieldPath": "fecha",
             "columnName": "fecha",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -57,9 +57,9 @@
             "notNull": true
           },
           {
-            "fieldPath": "tiempoEnSegundos",
-            "columnName": "tiempoEnSegundos",
-            "affinity": "INTEGER",
+            "fieldPath": "tiempoCronometro",
+            "columnName": "tiempoCronometro",
+            "affinity": "TEXT",
             "notNull": true
           }
         ],
@@ -67,7 +67,7 @@
           "columnNames": [
             "uid"
           ],
-          "autoGenerate": false
+          "autoGenerate": true
         },
         "indices": [],
         "foreignKeys": []
@@ -76,7 +76,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bc1aa4bfde37b5929a4e8acd677c7d5a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b2c13b2117dd0f5b12f283adaa2e2575')"
     ]
   }
 }

@@ -1,9 +1,10 @@
 package com.example.aplictrianrect.models
 
+import com.example.aplictrianrect.R
 import kotlin.math.*
 import kotlin.random.Random
 
-class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: String, val nombreImagen: String) {
+class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: String, val nombreImagen: Int) {
 
 
     fun redondeaA2Decimales(numero: Double) : Double{
@@ -22,7 +23,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         return numeroFinal
     }
 
-    fun generaPreguntaRandom() : Pregunta{
+    public fun generaPreguntaRandom() : Pregunta{
         var preguntaActual : Pregunta
 
         when (Random.nextInt(1, 27)){
@@ -79,7 +80,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble()/180.0
         val altura = largoSombra * tan(radianes)
 
-        return Pregunta(texto, altura, "m", "Persona")
+        return Pregunta(texto, altura, "m", R.drawable.persona)
     }
 
     fun preguntaTipo1C() : Pregunta {
@@ -94,7 +95,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble()/180.0
         val largoSombra = altura * tan(radianes)
 
-        return Pregunta(texto, largoSombra, "m", "Persona")
+        return Pregunta(texto, largoSombra, "m", R.drawable.persona)
     }
 
     fun preguntaTipo1E() : Pregunta {
@@ -110,7 +111,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = atan(altura/largoSombra)
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "Persona")
+        return Pregunta(texto, angulo, "°", R.drawable.persona)
     }
 
     // MARK: - Ejercicios de edificio
@@ -127,7 +128,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble()/180.0
         val altura = distancia * tan(radianes)
 
-        return Pregunta(texto, altura, "m", "Edificio")
+        return Pregunta(texto, altura, "m", R.drawable.edificio)
     }
 
     fun preguntaTipo2C() : Pregunta {
@@ -142,7 +143,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble()/180.0
         val largoSombra = altura / tan(radianes)
 
-        return Pregunta(texto, largoSombra, "m", "Edificio")
+        return Pregunta(texto, largoSombra, "m", R.drawable.edificio)
     }
 
     fun preguntaTipo2E() : Pregunta {
@@ -158,7 +159,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = atan(altura/largoSombra)
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "Edificio")
+        return Pregunta(texto, angulo, "°", R.drawable.edificio)
     }
 
     // MARK: - Ejercicios de avión
@@ -174,7 +175,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = distancia.toDouble() / sin(radianes)
 
-        return Pregunta(texto, altura, "m", "Avion")
+        return Pregunta(texto, altura, "m", R.drawable.avion)
     }
 
     fun preguntaTipo3D() : Pregunta {
@@ -188,7 +189,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val hipotenusa = altura.toDouble() / sin(radianes)
 
-        return Pregunta(texto, hipotenusa, "ft", "AvionV2")
+        return Pregunta(texto, hipotenusa, "ft", R.drawable.avion_v2)
     }
 
     fun preguntaTipo3E() : Pregunta {
@@ -202,7 +203,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = asin(altura.toDouble() / hipotenusa.toDouble())
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "AvionV2")
+        return Pregunta(texto, angulo, "°", R.drawable.avion_v2)
     }
 
     // MARK: - Ejercicios de escalera
@@ -219,7 +220,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = longitud.toDouble() * cos(radianes)
 
-        return Pregunta(texto, altura, "m", "EscaleraV2")
+        return Pregunta(texto, altura, "m", R.drawable.escalera_v2)
     }
 
     fun preguntaTipo4C() : Pregunta {
@@ -233,7 +234,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val distancia = altura.toDouble() / tan(radianes)
 
-        return Pregunta(texto, distancia, "ft", "Escalera")
+        return Pregunta(texto, distancia, "ft", R.drawable.escalera)
     }
 
     fun preguntaTipo4D() : Pregunta {
@@ -247,7 +248,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val hipotenusa = altura.toDouble() / sin(radianes)
 
-        return Pregunta(texto, hipotenusa, "ft", "Escalera")
+        return Pregunta(texto, hipotenusa, "ft", R.drawable.escalera)
     }
 
     // MARK: - Ejercicios de Rampa
@@ -264,7 +265,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = longitud * sin(radianes)
 
-        return Pregunta(texto, altura, "m", "Rampa")
+        return Pregunta(texto, altura, "m", R.drawable.rampa)
     }
 
     fun preguntaTipo5D() : Pregunta {
@@ -279,7 +280,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val hipotenusa = altura / sin(radianes)
 
-        return Pregunta(texto, hipotenusa, "ft", "Rampa")
+        return Pregunta(texto, hipotenusa, "ft", R.drawable.rampa)
     }
 
     fun preguntaTipo5E() : Pregunta {
@@ -295,7 +296,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = asin(altura/hipotenusa)
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "Rampa")
+        return Pregunta(texto, angulo, "°", R.drawable.rampa)
     }
 
     // MARK: - Ejercicios de Poste
@@ -312,7 +313,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = hipotenusa * sin(radianes)
 
-        return Pregunta(texto, altura, "m", "Poste")
+        return Pregunta(texto, altura, "m", R.drawable.poste)
     }
 
     fun preguntaTipo6D() : Pregunta {
@@ -327,7 +328,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val hipotenusa = altura.toDouble() / sin(radianes)
 
-        return Pregunta(texto, hipotenusa, "ft", "Poste")
+        return Pregunta(texto, hipotenusa, "ft", R.drawable.poste)
     }
 
     fun preguntaTipo6E() : Pregunta {
@@ -343,7 +344,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = atan(altura / distanciaBase)
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "Poste")
+        return Pregunta(texto, angulo, "°", R.drawable.poste)
     }
 
     // MARK: - Ejercicios de Arbol
@@ -360,7 +361,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = longitud * tan(radianes)
 
-        return Pregunta(texto, altura, "m", "Arbol")
+        return Pregunta(texto, altura, "m", R.drawable.arbol)
     }
 
     fun preguntaTipo7B() : Pregunta {
@@ -375,7 +376,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = hipotenusa.toDouble() * sin(radianes)
 
-        return Pregunta(texto, altura, "m", "Arbol")
+        return Pregunta(texto, altura, "m", R.drawable.arbol)
     }
 
     fun preguntaTipo7E() : Pregunta {
@@ -391,7 +392,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = atan(altura / longitudSombra)
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "Arbol")
+        return Pregunta(texto, angulo, "°", R.drawable.arbol)
     }
 
     // MARK: - Ejercicios de Tobogan
@@ -408,7 +409,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = longitud * sin(radianes)
 
-        return Pregunta(texto, altura, "m", "Tobogan")
+        return Pregunta(texto, altura, "m", R.drawable.tobogan)
     }
 
     fun preguntaTipo8B() : Pregunta {
@@ -423,7 +424,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val hipotenusa = altura / sin(radianes)
 
-        return Pregunta(texto, hipotenusa, "m", "Tobogan")
+        return Pregunta(texto, hipotenusa, "m", R.drawable.tobogan)
     }
 
     fun preguntaTipo8E() : Pregunta {
@@ -439,7 +440,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = asin(altura / hipotenusa)
         val angulo = radianes * 180 / PI.toDouble()
 
-        return Pregunta(texto, angulo, "°", "Tobogan")
+        return Pregunta(texto, angulo, "°", R.drawable.tobogan)
     }
 
     // MARK: - Preguntas de Papalote
@@ -459,7 +460,7 @@ class Pregunta(val textoPregunta: String, val respuesta: Double, val unidades: S
         val radianes = angulo.toDouble() * PI.toDouble() / 180.0
         val altura = hipotenusa * sin(radianes) + alturaNino
 
-        return Pregunta(texto, altura, "m", "Papalote")
+        return Pregunta(texto, altura, "m", R.drawable.papalote)
     }
 
 }

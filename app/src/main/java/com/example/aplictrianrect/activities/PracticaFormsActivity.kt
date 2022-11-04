@@ -61,6 +61,11 @@ class PracticaFormsActivity : AppCompatActivity() {
     fun startPractice(){
         if(checkFields()){
             val intent = Intent(this, PreguntaPracticaActivity::class.java)
+
+            intent.putExtra("namePractice", etNameField.text.toString())
+            intent.putExtra("idPractice", etIdField.text.toString())
+            intent.putExtra("groupPractice", etGroupField.text.toString())
+
             startActivity(intent)
         }
         else{

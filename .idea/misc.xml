@@ -18,9 +18,9 @@
         <entry key="app/src/main/res/layout/activity_examen_forms.xml" value="0.2373809814453125" />
         <entry key="app/src/main/res/layout/activity_historial.xml" value="0.32952880859375006" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3425384521484375" />
-        <entry key="app/src/main/res/layout/activity_practica_forms.xml" value="0.37293548583984376" />
-        <entry key="app/src/main/res/layout/activity_pregunta_examen.xml" value="0.19548797607421875" />
-        <entry key="app/src/main/res/layout/activity_pregunta_practica.xml" value="0.20925140380859386" />
+        <entry key="app/src/main/res/layout/activity_practica_forms.xml" value="0.21707305908203128" />
+        <entry key="app/src/main/res/layout/activity_pregunta_examen.xml" value="0.2803176879882812" />
+        <entry key="app/src/main/res/layout/activity_pregunta_practica.xml" value="0.34648284912109373" />
         <entry key="app/src/main/res/layout/activity_resultados.xml" value="0.2889617919921874" />
         <entry key="app/src/main/res/layout/fragment_creditos.xml" value="0.34114379882812507" />
         <entry key="app/src/main/res/layout/record_item.xml" value="0.34794158935546876" />

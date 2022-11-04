@@ -40,8 +40,9 @@ abstract class AppDatabase : RoomDatabase() {
             return Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
-                "app_database"
+                "aplictrian_database"
             )
+                .allowMainThreadQueries()
                 .build()
         }
     }
