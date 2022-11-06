@@ -119,8 +119,7 @@
                     android:fontFamily="@font/montserrat_regular"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:textColor="@color/navy_blue"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:textColor="@color/navy_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -7,7 +7,7 @@ import java.util.*
 
 @Entity
 data class Historial(
-    @PrimaryKey(autoGenerate = true) val uid: Int,
+    @PrimaryKey(autoGenerate = true) var uid: Int,
     @ColumnInfo(name = "nombre") val nombre: String,
     @ColumnInfo(name = "ident") val ident: String,
     @ColumnInfo(name = "grupo") val grupo: String,

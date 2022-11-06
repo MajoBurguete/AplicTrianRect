@@ -9,7 +9,7 @@ import java.util.*
 
 class AppUtility {
 
-    public fun hideKeyboard(view: View, activity: Activity){
+    fun hideKeyboard(view: View, activity: Activity){
         val imm: InputMethodManager =
             activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0)

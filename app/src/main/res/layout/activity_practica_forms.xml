@@ -16,16 +16,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
-        app:tint="?attr/colorOnBackground" />
+        app:tint="?attr/colorOnBackground"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:id="@+id/linearLayoutInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ibBackButton">
+
+        <ImageView
+            android:id="@+id/ivTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingEnd="5dp"
+            app:srcCompat="@drawable/ic_practica_mini_icon" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/practica_button"
+            android:textColor="@color/star_command_blue"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svPracticeForm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,57 +71,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent">
 
-            <LinearLayout
-                android:id="@+id/linearLayoutInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fitsSystemWindows="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/ivTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingEnd="5dp"
-                    app:srcCompat="@drawable/ic_practica_mini_icon" />
-
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="@string/practica_button"
-                    android:textColor="@color/star_command_blue"
-                    android:textSize="28sp" />
-
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/tvPracticaInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat_regular"
                 android:text="@string/practica_description"
                 android:textAlignment="center"
                 android:textColor="?attr/colorSecondary"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/linearLayoutInfo"
-                app:layout_constraintStart_toStartOf="@+id/linearLayoutInfo"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextFieldName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="30dp"
                 android:hint="@string/name_label"
                 android:paddingStart="35dp"
                 android:paddingEnd="35dp"
@@ -109,7 +110,8 @@
                     android:fontFamily="@font/montserrat_regular"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
-                    android:textColor="?attr/colorSecondary" />
+                    android:textColor="?attr/colorSecondary"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,7 +141,8 @@
                     android:fontFamily="@font/montserrat_regular"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
-                    android:textColor="@color/navy_blue" />
+                    android:textColor="@color/navy_blue"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -169,7 +172,8 @@
                     android:fontFamily="@font/montserrat_regular"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
-                    android:textColor="?attr/colorSecondary" />
+                    android:textColor="?attr/colorSecondary"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

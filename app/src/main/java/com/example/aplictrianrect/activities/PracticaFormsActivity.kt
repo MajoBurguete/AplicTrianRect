@@ -6,11 +6,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import com.example.aplictrianrect.R
+import com.example.aplictrianrect.models.AppUtility
 
 class PracticaFormsActivity : AppCompatActivity() {
 
@@ -20,6 +18,9 @@ class PracticaFormsActivity : AppCompatActivity() {
     lateinit var tvPracticeWarning: TextView
     lateinit var ibBackButton: ImageButton
     lateinit var btnStartPractice: Button
+    lateinit var svPracticeForm: ScrollView
+
+    private val appUtilityInstance = AppUtility()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,13 +34,32 @@ class PracticaFormsActivity : AppCompatActivity() {
         tvPracticeWarning = findViewById(R.id.tvPracticeWarning)
         ibBackButton = findViewById(R.id.ibBackButton)
         btnStartPractice = findViewById(R.id.btnStartPractice)
+        svPracticeForm = findViewById(R.id.svPracticeForm)
 
         // Inicialización
         tvPracticeWarning.visibility = View.GONE
 
-        // Click listeners
+        // Listeners
         ibBackButton.setOnClickListener { backOnClick() }
         btnStartPractice.setOnClickListener { startPractice() }
+
+        etNameField.setOnFocusChangeListener { v, hasFocus ->
+            if(!hasFocus) {
+                appUtilityInstance.hideKeyboard(v, this)
+            }
+        }
+
+        etIdField.setOnFocusChangeListener { v, hasFocus ->
+            if(!hasFocus) {
+                appUtilityInstance.hideKeyboard(v, this)
+            }
+        }
+
+        etGroupField.setOnFocusChangeListener { v, hasFocus ->
+            if(!hasFocus) {
+                appUtilityInstance.hideKeyboard(v, this)
+            }
+        }
 
 
 

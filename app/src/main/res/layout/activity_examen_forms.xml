@@ -10,196 +10,207 @@
         android:id="@+id/ibBackFromTestButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:tint="?attr/colorOnBackground"
         android:layout_marginTop="8dp"
         android:backgroundTint="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/ic_back"
+        app:tint="?attr/colorOnBackground"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayoutInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ibBackFromTestButton">
 
-        <LinearLayout
-            android:id="@+id/linearLayoutInfo"
+        <ImageView
+            android:id="@+id/ivTitleQuickTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:paddingEnd="5dp"
+            app:srcCompat="@drawable/ic_examen_rapido_mini_icon" />
+
+        <TextView
+            android:id="@+id/tvTitleQuickTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/examen_title"
+            android:textColor="@color/cyan_process"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svQuickTestForm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/ivTitleQuickTest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingEnd="5dp"
-                app:srcCompat="@drawable/ic_examen_rapido_mini_icon" />
+            app:layout_constraintTop_toBottomOf="@+id/ibBackFromTestButton">
 
             <TextView
-                android:id="@+id/tvTitleQuickTest"
+                android:id="@+id/tvTestInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="@string/examen_title"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/examen_description"
+                android:textAlignment="center"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextFieldNameTest"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:hint="@string/name_label"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="?attr/colorSecondaryVariant"
+                app:layout_constraintEnd_toEndOf="@+id/tvTestInfo"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tvTestInfo"
+                app:layout_constraintTop_toBottomOf="@+id/tvTestInfo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNameFieldTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="?attr/colorSecondaryVariant" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextFieldIdTest"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="@string/id_label"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="?attr/colorSecondaryVariant"
+                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldNameTest"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldNameTest"
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldNameTest">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etIdFieldTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="?attr/colorSecondaryVariant" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextFieldGroupTest"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="@string/group_label"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="?attr/colorSecondaryVariant"
+                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldIdTest"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldIdTest"
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldIdTest">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGroupFieldTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="?attr/colorSecondaryVariant" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnStartTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="85dp"
+                android:backgroundTint="@color/blizzard_blue"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="@string/start_label"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/cyan_process"
-                android:textSize="28sp" />
+                android:textSize="34sp"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldGroupTest"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldGroupTest"
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldGroupTest" />
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvTestInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/montserrat_regular"
-            android:text="@string/examen_description"
-            android:textAlignment="center"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@id/linearLayoutInfo"
-            app:layout_constraintStart_toStartOf="@+id/linearLayoutInfo"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedTextFieldNameTest"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:hint="@string/name_label"
-            android:paddingStart="35dp"
-            android:paddingEnd="35dp"
-            android:textColorHint="?attr/colorSecondaryVariant"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="?attr/colorSecondaryVariant"
-            app:layout_constraintEnd_toEndOf="@+id/tvTestInfo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvTestInfo"
-            app:layout_constraintTop_toBottomOf="@+id/tvTestInfo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNameFieldTest"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvTestWarning"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_regular"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:textColor="?attr/colorSecondaryVariant" />
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/advertencia"
+                android:textAlignment="center"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/btnStartTest"
+                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldGroupTest"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldGroupTest"
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldGroupTest"
+                app:layout_constraintVertical_bias="0.577" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedTextFieldIdTest"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="@string/id_label"
-            android:paddingStart="35dp"
-            android:paddingEnd="35dp"
-            android:textColorHint="?attr/colorSecondaryVariant"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="?attr/colorSecondaryVariant"
-            app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldNameTest"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldNameTest"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldNameTest">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etIdFieldTest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_regular"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:textColor="?attr/colorSecondaryVariant" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedTextFieldGroupTest"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:hint="@string/group_label"
-            android:paddingStart="35dp"
-            android:paddingEnd="35dp"
-            android:textColorHint="?attr/colorSecondaryVariant"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="?attr/colorSecondaryVariant"
-            app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldIdTest"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldIdTest"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldIdTest">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etGroupFieldTest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_regular"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:textColor="?attr/colorSecondaryVariant" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btnStartTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
-            android:backgroundTint="@color/blizzard_blue"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
-            android:text="@string/start_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/cyan_process"
-            android:textSize="34sp"
-            app:cornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldGroupTest"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldGroupTest"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldGroupTest" />
-
-        <TextView
-            android:id="@+id/tvTestWarning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:text="@string/advertencia"
-            android:textAlignment="center"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="16sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/btnStartTest"
-            app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldGroupTest"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldGroupTest"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldGroupTest"
-            app:layout_constraintVertical_bias="0.577" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

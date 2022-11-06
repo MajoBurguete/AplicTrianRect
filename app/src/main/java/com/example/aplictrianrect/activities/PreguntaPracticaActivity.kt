@@ -37,16 +37,11 @@ class PreguntaPracticaActivity : AppCompatActivity() {
     lateinit var svPracticeContainer: ScrollView
     lateinit var preguntaActual: Pregunta
 
-    //Para guardar el historial de los intentos realizados por el usuario
-    lateinit var arregloHistorial: Vector<Historial>
     private val appUtilityInstance = AppUtility()
     var numeroDeEjercicio = 0
     var aciertos = 0
     var ejercicioRevisado = false
     lateinit var crono: Chronometer
-    var tiempoEnSegundos = 0
-
-    lateinit var historial: Historial
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -217,10 +212,10 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         }
 
         appDatabase.insertAll(historial)
-        checkDatabase()
 
     }
 
+    // FUNCION DE PRUEBA PARA VER CADA ELEMENTO EN LA BASE DE DATOS
     fun checkDatabase(){
         var historialList = appDatabase.getAll()
 
