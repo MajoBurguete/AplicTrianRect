@@ -2,13 +2,13 @@ package com.example.aplictrianrect.activities
 
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import com.example.aplictrianrect.R
 import com.example.aplictrianrect.database.AppDatabase
@@ -17,8 +17,6 @@ import com.example.aplictrianrect.models.Historial
 import com.example.aplictrianrect.models.Pregunta
 import com.google.android.material.textfield.TextInputLayout
 import java.lang.Math.abs
-import java.time.Instant
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -34,9 +32,9 @@ class PreguntaPracticaActivity : AppCompatActivity() {
     lateinit var outlinedTextFieldAnswerPractice: TextInputLayout
     lateinit var btnCheckPractice: Button
     lateinit var btnNextQuestPractice: Button
-    lateinit var svPracticeContainer: ScrollView
-    lateinit var preguntaActual: Pregunta
+    lateinit var clPracticeContainer: ConstraintLayout
 
+    lateinit var preguntaActual: Pregunta
     private val appUtilityInstance = AppUtility()
     var numeroDeEjercicio = 0
     var aciertos = 0
@@ -56,7 +54,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         outlinedTextFieldAnswerPractice = findViewById(R.id.outlinedTextFieldAnswerPractice)
         btnCheckPractice = findViewById(R.id.btnCheckPractice)
         btnNextQuestPractice = findViewById(R.id.btnNextQuestPractice)
-        svPracticeContainer = findViewById(R.id.svPracticeContainer)
+        clPracticeContainer = findViewById(R.id.clPracticeContainer)
         crono = findViewById(R.id.practiceCrono)
 
         // Inicialización
@@ -66,6 +64,11 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         ibBackFromPracticeQuestion.setOnClickListener { backOnClick() }
         btnNextQuestPractice.setOnClickListener { siguientePregunta() }
         btnCheckPractice.setOnClickListener { revisarRespuesta() }
+
+        clPracticeContainer.setOnClickListener{
+            etAnswerPracticeField.clearFocus()
+        }
+
         etAnswerPracticeField.setOnFocusChangeListener { v, hasFocus ->
             if(!hasFocus) {
                 appUtilityInstance.hideKeyboard(v, this)
@@ -77,6 +80,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
 
     }
 
+    // genera una pregunta nueva y la muestra en la interfaz, colocando en blanco el espacio para responder
     fun cargarPregunta(){
         preguntaActual = preguntaActual.generaPreguntaRandom()
         Log.d("respuesta", preguntaActual.respuesta.toString())
@@ -231,11 +235,6 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         val seconds = (timeElapsed - hours * 3600000 - minutes * 60000).toInt() / 1000
 
         return hours.toString() + ":" + minutes.toString() + ":" + seconds.toString()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("PRACT", "onStop: " + getCronoTime())
     }
 
 }

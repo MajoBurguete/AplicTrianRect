@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".activities.ExamenFormsActivity">
 
     <ImageButton
-        android:id="@+id/ibBackFromTestButton"
+        android:id="@+id/ibBackFromTestForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -26,7 +27,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibBackFromTestButton">
+        app:layout_constraintTop_toBottomOf="@+id/ibBackFromTestForm">
 
         <ImageView
             android:id="@+id/ivTitleQuickTest"
@@ -34,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingEnd="5dp"
-            app:srcCompat="@drawable/ic_examen_rapido_mini_icon" />
+            app:srcCompat="@drawable/ic_examen_rapido_mini_icon"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/tvTitleQuickTest"
@@ -53,20 +55,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clQuickTestForm"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ibBackFromTestButton">
+            app:layout_constraintTop_toBottomOf="@+id/ibBackFromTestForm">
 
             <TextView
                 android:id="@+id/tvTestInfo"

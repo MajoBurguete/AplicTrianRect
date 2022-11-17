@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.aplictrianrect.R
 import com.example.aplictrianrect.models.AppUtility
 
@@ -18,7 +19,7 @@ class PracticaFormsActivity : AppCompatActivity() {
     lateinit var tvPracticeWarning: TextView
     lateinit var ibBackButton: ImageButton
     lateinit var btnStartPractice: Button
-    lateinit var svPracticeForm: ScrollView
+    lateinit var clPracticeContainer: ConstraintLayout
 
     private val appUtilityInstance = AppUtility()
 
@@ -34,7 +35,7 @@ class PracticaFormsActivity : AppCompatActivity() {
         tvPracticeWarning = findViewById(R.id.tvPracticeWarning)
         ibBackButton = findViewById(R.id.ibBackButton)
         btnStartPractice = findViewById(R.id.btnStartPractice)
-        svPracticeForm = findViewById(R.id.svPracticeForm)
+        clPracticeContainer = findViewById(R.id.clPracticeContainer)
 
         // Inicialización
         tvPracticeWarning.visibility = View.GONE
@@ -42,6 +43,12 @@ class PracticaFormsActivity : AppCompatActivity() {
         // Listeners
         ibBackButton.setOnClickListener { backOnClick() }
         btnStartPractice.setOnClickListener { startPractice() }
+
+        clPracticeContainer.setOnClickListener {
+            etNameField.clearFocus()
+            etIdField.clearFocus()
+            etGroupField.clearFocus()
+        }
 
         etNameField.setOnFocusChangeListener { v, hasFocus ->
             if(!hasFocus) {

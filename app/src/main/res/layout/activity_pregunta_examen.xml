@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".activities.PreguntaExamenActivity">
 
     <ImageButton
-        android:id="@+id/ibBackFromPracticeQuestion"
+        android:id="@+id/ibBackTestQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -26,10 +27,10 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibBackFromPracticeQuestion">
+        app:layout_constraintTop_toBottomOf="@+id/ibBackTestQuestion">
 
         <ImageView
-            android:id="@+id/ivTitlePractice"
+            android:id="@+id/ivTitleTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,7 +38,7 @@
             app:srcCompat="@drawable/ic_examen_rapido_mini_icon" />
 
         <TextView
-            android:id="@+id/tvTitlePractice"
+            android:id="@+id/tvTitleTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -48,62 +49,151 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvCountDownTimer"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="00:00"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="22sp"
+        app:fontFamily="@font/montserrat_bold"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountDownTimer">
+
+        <Button
+            android:id="@+id/btnFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="2"
+            android:enabled="false"
+            android:text="@string/btn_placeholder"
+            android:textColor="@android:color/transparent"
+            app:backgroundTint="?attr/colorButtonNormal"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btnSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="2"
+            android:enabled="false"
+            android:textColor="@android:color/transparent"
+            app:backgroundTint="?attr/colorButtonNormal"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btnThird"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="2"
+            android:enabled="false"
+            app:backgroundTint="?attr/colorButtonNormal"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btnFourth"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="2"
+            android:enabled="false"
+            app:backgroundTint="?attr/colorButtonNormal"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnFifth"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="2"
+            android:enabled="false"
+            app:backgroundTint="?attr/colorButtonNormal"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
+
     <ScrollView
-        android:id = "@+id/svPracticeContainer"
+        android:id="@+id/svTestContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutInfo">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/clQuickTestQuest"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ibBackFromPracticeQuestion">
+            android:fitsSystemWindows="true"
+            app:layout_constraintTop_toBottomOf="parent">
 
-            <TextView
-                android:id="@+id/tvPracticaInfo"
+            <ScrollView
+                android:id="@+id/scrollView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/examen_rapido_background"
-                android:fontFamily="@font/montserrat_regular"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/practica_description"
-                android:textAlignment="center"
-                android:textColor="@color/sapphire_blue"
-                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvTestInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/examen_rapido_background"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:padding="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/practica_description"
+                    android:textAlignment="center"
+                    android:textColor="@color/sapphire_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </ScrollView>
 
             <ImageView
-                android:id="@+id/ivProblema"
+                android:id="@+id/ivProblemaTest"
                 android:layout_width="250dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="36dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.511"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPracticaInfo"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2"
                 tools:srcCompat="@drawable/escalera_v2" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/outlinedTextFieldAnswerPractice"
+                android:id="@+id/outlinedTextFieldAnswerTest"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="14dp"
                 android:hint="@string/answer_label"
                 android:paddingStart="45dp"
                 android:paddingEnd="45dp"
@@ -113,19 +203,20 @@
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeColor="@color/navy_blue"
-                app:layout_constraintEnd_toEndOf="@+id/ivProblema"
+                app:layout_constraintEnd_toEndOf="@+id/ivProblemaTest"
                 app:layout_constraintHorizontal_bias="0.466"
-                app:layout_constraintStart_toStartOf="@+id/ivProblema"
-                app:layout_constraintTop_toBottomOf="@+id/ivProblema">
+                app:layout_constraintStart_toStartOf="@+id/ivProblemaTest"
+                app:layout_constraintTop_toBottomOf="@+id/ivProblemaTest">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etAnswerPracticeField"
+                    android:id="@+id/etAnswerTestField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_regular"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:textColor="@color/navy_blue" />
+                    android:textColor="@color/navy_blue"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,13 +226,13 @@
                 android:layout_marginTop="28dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldAnswerPractice"
+                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldAnswerTest"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldAnswerPractice">
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldAnswerTest">
 
                 <Button
-                    android:id="@+id/btnCheckPractice"
+                    android:id="@+id/btnCheckTest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blizzard_blue"
@@ -155,7 +246,7 @@
                     app:cornerRadius="12dp" />
 
                 <Button
-                    android:id="@+id/btnNextQuestPractice"
+                    android:id="@+id/btnNextQuestTest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -168,61 +259,6 @@
                     android:textColor="@color/cyan_process"
                     android:textSize="20sp"
                     app:cornerRadius="12dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/btnFirst"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_weight="2"
-                    android:text="@string/btn_placeholder"
-                    android:textColor="@android:color/transparent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btnSecond"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_weight="2"
-                    android:textColor="@android:color/transparent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btnThird"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_weight="2"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btnFourth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_weight="2"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-                <Button
-                    android:id="@+id/btnFifth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="7dp"
-                    android:layout_weight="2"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
