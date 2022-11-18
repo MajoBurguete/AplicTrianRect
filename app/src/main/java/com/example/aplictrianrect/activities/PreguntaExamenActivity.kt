@@ -35,6 +35,10 @@ class PreguntaExamenActivity : AppCompatActivity() {
     lateinit var btnCheckTest: Button
     lateinit var btnNextQuestTest: Button
     lateinit var clQuickTestQuest: ConstraintLayout
+    lateinit var nameTest: String
+    lateinit var idTest: String
+    lateinit var groupTest: String
+    lateinit var finalTimeS: String
 
     lateinit var preguntaActual: Pregunta
     private val appUtilityInstance = AppUtility()
@@ -67,6 +71,9 @@ class PreguntaExamenActivity : AppCompatActivity() {
 
         // Inicialización
         preguntaActual = Pregunta("",0.0,"",0)
+        nameTest = intent.getStringExtra("nameTest").toString()
+        idTest = intent.getStringExtra("idTest").toString()
+        groupTest = intent.getStringExtra("groupTest").toString()
 
         // Click listeners
         ibBackFromTestQuestion.setOnClickListener { backOnClick() }
@@ -246,7 +253,7 @@ class PreguntaExamenActivity : AppCompatActivity() {
         return false
     }
 
-
+    // Iniciar el timer
     fun startTimer(){
         timer = object : CountDownTimer(601000, 1000){
             override fun onFinish() {
@@ -260,6 +267,7 @@ class PreguntaExamenActivity : AppCompatActivity() {
         }.start()
     }
 
+    // Funcion para actualizar el text view del timer
     fun updateCountdown(){
         val minutesUntilFinished = secondsRemaining / 60
         val secondsInMinuteUntilFinished = secondsRemaining - minutesUntilFinished * 60
@@ -272,28 +280,27 @@ class PreguntaExamenActivity : AppCompatActivity() {
 
     }
 
+    //Obtiene el tiempo en el que se completo la actividad
     fun getFinalTime(): String {
         val timePassed = 600 - secondsRemaining
         val minutesPassed = timePassed / 60
         val secondsInMinuteUntilFinished = timePassed - minutesPassed * 60
         val secondsStr = secondsInMinuteUntilFinished.toString()
 
-        Log.d("examen", "$minutesPassed:${
+        finalTimeS = "$minutesPassed:${
             if(secondsStr.length == 2) secondsStr
             else "0" + secondsStr}"
-        )
 
-        return "$minutesPassed:${
-            if(secondsStr.length == 2) secondsStr
-            else "0" + secondsStr}"
+        return finalTimeS
     }
 
     /* TODO: Hacer funcion para obtener el tiempo en el que completo la prueba, agregar el tiempo al
      objeto del historial, comprobar que se este guardando bien en la base de datos*/
     fun guardarHistorial(){
-        val historial = Historial(0, intent.getStringExtra("nameTest").toString(),
-            intent.getStringExtra("idTest").toString(),
-            intent.getStringExtra("groupTest").toString(),
+        val historial = Historial(0,
+            nameTest,
+            idTest,
+            groupTest,
             appUtilityInstance.getDate(),
             aciertos,
             5,
@@ -314,6 +321,15 @@ class PreguntaExamenActivity : AppCompatActivity() {
         timer.cancel()
         guardarHistorial()
         val intent = Intent(this@PreguntaExamenActivity, ResultadosActivity::class.java)
+
+        intent.putExtra("nameResults", nameTest)
+        intent.putExtra("idResults", idTest)
+        intent.putExtra("groupResults", groupTest)
+        intent.putExtra("timeResults",finalTimeS)
+        intent.putExtra("dateResults", appUtilityInstance.getDate())
+        intent.putExtra("hourResults", appUtilityInstance.getHour())
+        intent.putExtra("aciertosResults", aciertos)
+
         startActivity(intent)
     }
 

@@ -25,6 +25,92 @@ class AppUtility {
         return "${getDay(currentDay)} ${getMonth(currentMonth)}. $currentYear"
     }
 
+    fun getHour(): String {
+        val calendar = Calendar.getInstance(TimeZone.getDefault())
+
+        val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
+        val currentMinutes = calendar.get(Calendar.MINUTE)
+
+
+        return getHourAMorPM(currentHour, currentMinutes)
+    }
+
+    fun getHourAMorPM(hour: Int, minutes: Int): String{
+        if(hour < 12){
+            if(hour == 0){
+                return "12:$minutes am"
+            }
+            if(hour == 1){
+                return "01:$minutes am"
+            }
+            if(hour == 2){
+                return "02:$minutes am"
+            }
+            if(hour == 3){
+                return "03:$minutes am"
+            }
+            if(hour == 4){
+                return "04:$minutes am"
+            }
+            if(hour == 5){
+                return "05:$minutes am"
+            }
+            if(hour == 6){
+                return "06:$minutes am"
+            }
+            if(hour == 7){
+                return "07:$minutes am"
+            }
+            if(hour == 8){
+                return "08:$minutes am"
+            }
+            if(hour == 9){
+                return "09:$minutes am"
+            }
+            if(hour == 10){
+                return "10:$minutes am"
+            }
+            if(hour == 11){
+                return "11:$minutes am"
+            }
+        } else if (hour > 12){
+            if(hour == 13){
+                return "01:$minutes pm"
+            }
+            if(hour == 14){
+                return "02:$minutes pm"
+            }
+            if(hour == 15){
+                return "03:$minutes pm"
+            }
+            if(hour == 16){
+                return "04:$minutes pm"
+            }
+            if(hour == 17){
+                return "05:$minutes pm"
+            }
+            if(hour == 18){
+                return "06:$minutes pm"
+            }
+            if(hour == 19){
+                return "07:$minutes pm"
+            }
+            if(hour == 20){
+                return "08:$minutes pm"
+            }
+            if(hour == 21){
+                return "09:$minutes pm"
+            }
+            if(hour == 22){
+                return "10:$minutes pm"
+            }
+            if(hour == 23){
+                return "11:$minutes pm"
+            }
+        }
+        return "12:$minutes pm"
+    }
+
     fun getDay(day: Int): String {
         if(day < 10){
             return "0$day"

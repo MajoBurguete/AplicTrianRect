@@ -54,7 +54,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         outlinedTextFieldAnswerPractice = findViewById(R.id.outlinedTextFieldAnswerPractice)
         btnCheckPractice = findViewById(R.id.btnCheckPractice)
         btnNextQuestPractice = findViewById(R.id.btnNextQuestPractice)
-        clPracticeContainer = findViewById(R.id.clPracticeContainer)
+        clPracticeContainer = findViewById(R.id.clPracticeQuestContainer)
         crono = findViewById(R.id.practiceCrono)
 
         // Inicialización

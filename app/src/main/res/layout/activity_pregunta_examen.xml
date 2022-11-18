@@ -216,7 +216,8 @@
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     android:textColor="@color/navy_blue"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:inputType = "number|numberDecimal"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

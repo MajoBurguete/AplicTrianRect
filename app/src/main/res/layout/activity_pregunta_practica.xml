@@ -120,7 +120,8 @@
                     android:fontFamily="@font/montserrat_regular"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:textColor="@color/navy_blue" />
+                    android:textColor="@color/navy_blue"
+                    android:inputType = "number|numberDecimal"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
