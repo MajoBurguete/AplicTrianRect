@@ -12,6 +12,7 @@ data class Historial(
     @ColumnInfo(name = "ident") val ident: String,
     @ColumnInfo(name = "grupo") val grupo: String,
     @ColumnInfo(name = "fecha") val fecha: String,
+    @ColumnInfo(name = "hora") val hora: String,
     @ColumnInfo(name = "puntos") val puntos: Int,
     @ColumnInfo(name = "cantEjercicios") val cantEjercicios: Int,
     @ColumnInfo(name = "tipoActividad") val tipoActividad: String,

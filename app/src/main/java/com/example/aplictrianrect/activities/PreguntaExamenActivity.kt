@@ -302,6 +302,7 @@ class PreguntaExamenActivity : AppCompatActivity() {
             idTest,
             groupTest,
             appUtilityInstance.getDate(),
+            appUtilityInstance.getHour(),
             aciertos,
             5,
             "quiz",

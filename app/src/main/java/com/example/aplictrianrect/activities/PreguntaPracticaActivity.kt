@@ -204,6 +204,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
             intent.getStringExtra("idPractice").toString(),
             intent.getStringExtra("groupPractice").toString(),
             appUtilityInstance.getDate(),
+            appUtilityInstance.getHour(),
             aciertos,
             numeroDeEjercicio,
             "practica",
