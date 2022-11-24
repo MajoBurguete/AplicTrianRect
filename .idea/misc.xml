@@ -15,14 +15,14 @@
         <entry key="app/src/main/res/drawable/practice_background.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/resultados_background.xml" value="0.1785" />
         <entry key="app/src/main/res/layout/activity_creditos.xml" value="0.21875" />
-        <entry key="app/src/main/res/layout/activity_examen_forms.xml" value="0.2373809814453125" />
-        <entry key="app/src/main/res/layout/activity_historial.xml" value="0.32952880859375006" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3425384521484375" />
-        <entry key="app/src/main/res/layout/activity_practica_forms.xml" value="0.37293548583984376" />
-        <entry key="app/src/main/res/layout/activity_pregunta_examen.xml" value="0.33814086914062497" />
-        <entry key="app/src/main/res/layout/activity_pregunta_practica.xml" value="0.3569732666015626" />
-        <entry key="app/src/main/res/layout/activity_resultados.xml" value="0.2889617919921874" />
-        <entry key="app/src/main/res/layout/fragment_creditos.xml" value="0.34114379882812507" />
+        <entry key="app/src/main/res/layout/activity_examen_forms.xml" value="0.20614471435546872" />
+        <entry key="app/src/main/res/layout/activity_historial.xml" value="0.1832168579101563" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19050292968750002" />
+        <entry key="app/src/main/res/layout/activity_practica_forms.xml" value="0.1868438720703126" />
+        <entry key="app/src/main/res/layout/activity_pregunta_examen.xml" value="0.21992407277378073" />
+        <entry key="app/src/main/res/layout/activity_pregunta_practica.xml" value="0.20802612304687504" />
+        <entry key="app/src/main/res/layout/activity_resultados.xml" value="0.2770446777343751" />
+        <entry key="app/src/main/res/layout/fragment_creditos.xml" value="0.24271850585937504" />
         <entry key="app/src/main/res/layout/record_item.xml" value="0.34794158935546876" />
         <entry key="app/src/main/res/layout/record_practice_item.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/record_test_item.xml" value="0.21875" />

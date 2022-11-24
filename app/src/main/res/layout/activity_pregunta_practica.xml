@@ -4,160 +4,197 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreguntaPracticaActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".activities.PreguntaPracticaActivity">
+
+    <Chronometer
+        android:id="@+id/practiceCrono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Chronometer>
 
     <ImageButton
         android:id="@+id/ibBackFromPracticeQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:tint="?attr/colorOnBackground"
         android:layout_marginTop="8dp"
         android:backgroundTint="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/ic_back"
+        app:tint="?attr/colorOnBackground"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="672dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayoutInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ibBackFromPracticeQuestion">
 
-        <LinearLayout
-            android:id="@+id/linearLayoutInfo"
+        <ImageView
+            android:id="@+id/ivTitlePractice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/ivTitlePractice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingEnd="5dp"
-                app:srcCompat="@drawable/ic_practica_mini_icon" />
-
-            <TextView
-                android:id="@+id/tvTitlePractice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="@string/practica_button"
-                android:textColor="@color/star_command_blue"
-                android:textSize="28sp" />
-
-        </LinearLayout>
+            android:layout_weight="1"
+            android:paddingEnd="5dp"
+            app:srcCompat="@drawable/ic_practica_mini_icon" />
 
         <TextView
-            android:id="@+id/tvPracticaInfo"
-            android:layout_width="0dp"
+            android:id="@+id/tvTitlePractice"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/practica_background"
-            android:fontFamily="@font/montserrat_regular"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/practica_description"
-            android:textAlignment="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/practica_button"
             android:textColor="@color/star_command_blue"
-            android:textSize="18sp"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id = "@+id/svPracticeContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id = "@+id/clPracticeQuestContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayoutInfo" />
+            app:layout_constraintTop_toBottomOf="parent"
+            android:clickable="true"
+            android:focusableInTouchMode="true">
 
-        <ImageView
-            android:id="@+id/ivProblema"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintEnd_toEndOf="@+id/tvPracticaInfo"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPracticaInfo"
-            tools:srcCompat="@tools:sample/avatars" />
+            <ImageView
+                android:id="@+id/ivProblema"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/scrollView2"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+                tools:srcCompat="@tools:sample/avatars" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedTextFieldAnswerPractice"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:hint="@string/answer_label"
-            android:paddingStart="45dp"
-            android:paddingEnd="45dp"
-            android:textColorHint="@color/navy_blue"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/navy_blue"
-            app:layout_constraintEnd_toEndOf="@+id/ivProblema"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="@+id/ivProblema"
-            app:layout_constraintTop_toBottomOf="@+id/ivProblema">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etAnswerPracticeField"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextFieldAnswerPractice"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_regular"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/navy_blue" />
+                android:layout_marginTop="28dp"
+                android:hint="@string/answer_label"
+                android:paddingStart="45dp"
+                android:paddingEnd="45dp"
+                android:textColorHint="@color/navy_blue"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeColor="@color/navy_blue"
+                app:layout_constraintEnd_toEndOf="@+id/ivProblema"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/ivProblema"
+                app:layout_constraintTop_toBottomOf="@+id/ivProblema">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAnswerPracticeField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/navy_blue"
+                    android:inputType = "number|numberDecimal"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldAnswerPractice"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldAnswerPractice">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btnCheckPractice"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/columbia_blue"
-                android:fontFamily="@font/montserrat_semi_bold"
-                android:paddingStart="35dp"
-                android:paddingEnd="35dp"
-                android:text="@string/check_label"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/star_command_blue"
-                android:textSize="20sp"
-                app:cornerRadius="12dp" />
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldAnswerPractice"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldAnswerPractice">
 
-            <Button
-                android:id="@+id/btnNextQuestPractice"
-                android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnCheckPractice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/columbia_blue"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp"
+                    android:text="@string/check_label"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/star_command_blue"
+                    android:textSize="20sp"
+                    app:cornerRadius="12dp" />
+
+                <Button
+                    android:id="@+id/btnNextQuestPractice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/columbia_blue"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/next_label"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/star_command_blue"
+                    android:textSize="20sp"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:backgroundTint="@color/columbia_blue"
-                android:fontFamily="@font/montserrat_semi_bold"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="@string/next_label"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/star_command_blue"
-                android:textSize="20sp"
-                app:cornerRadius="12dp" />
-        </LinearLayout>
+                android:layout_marginTop="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvPracticaInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/practica_background"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:padding="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/practica_description"
+                    android:textAlignment="center"
+                    android:textColor="@color/star_command_blue"
+                    android:textSize="18sp" />
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
