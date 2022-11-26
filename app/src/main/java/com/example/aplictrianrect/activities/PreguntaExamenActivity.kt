@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -35,6 +36,7 @@ class PreguntaExamenActivity : AppCompatActivity() {
     lateinit var btnCheckTest: Button
     lateinit var btnNextQuestTest: Button
     lateinit var clQuickTestQuest: ConstraintLayout
+    lateinit var ivWrongRight: ImageView
     lateinit var nameTest: String
     lateinit var idTest: String
     lateinit var groupTest: String
@@ -61,6 +63,7 @@ class PreguntaExamenActivity : AppCompatActivity() {
         btnCheckTest = findViewById(R.id.btnCheckTest)
         btnNextQuestTest = findViewById(R.id.btnNextQuestTest)
         clQuickTestQuest = findViewById(R.id.clQuickTestQuest)
+        ivWrongRight = findViewById(R.id.ivWrongRightTest)
         btnFirst = findViewById(R.id.btnFirst)
         btnSecond = findViewById(R.id.btnSecond)
         btnThird = findViewById(R.id.btnThird)
@@ -129,6 +132,7 @@ class PreguntaExamenActivity : AppCompatActivity() {
 
     fun siguientePregunta(){
         etAnswerTestField.clearFocus()
+        ivWrongRight.visibility = View.GONE
         if(!ejercicioRevisado){
             if(!etAnswerTestField.text.isEmpty()){ // si tecleó la respuesta
                 // se revisa el ejercicio
@@ -173,6 +177,8 @@ class PreguntaExamenActivity : AppCompatActivity() {
                     // se revisa el ejercicio
                     if(revisaRespuestaConMargenDeError(respUsuario, preguntaActual.respuesta)){
                         colorBtnRightAnswer()
+                        ivWrongRight.setImageResource(R.drawable.ic_right)
+                        ivWrongRight.visibility = View.VISIBLE
                         etAnswerTestField.setTextColor(resources.getColor(R.color.green))
                         btnCheckTest.isEnabled = false
                         btnCheckTest.alpha = 0.5f
@@ -180,6 +186,8 @@ class PreguntaExamenActivity : AppCompatActivity() {
                     }
                     else{
                         colorBtnWrongAnswer()
+                        ivWrongRight.setImageResource(R.drawable.ic_wrong)
+                        ivWrongRight.visibility = View.VISIBLE
                         etAnswerTestField.setTextColor(resources.getColor(R.color.red))
                         // si la respuesta está equivocada, se da la opción de ver la respuesta correcta
                         btnCheckTest.text = "Ver respuesta"

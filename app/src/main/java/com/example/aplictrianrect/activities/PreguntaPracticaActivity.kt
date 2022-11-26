@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
     lateinit var etAnswerPracticeField: EditText
     lateinit var outlinedTextFieldAnswerPractice: TextInputLayout
     lateinit var btnCheckPractice: Button
+    lateinit var ivWrongRight: ImageView
     lateinit var btnNextQuestPractice: Button
     lateinit var clPracticeContainer: ConstraintLayout
 
@@ -55,6 +57,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         btnCheckPractice = findViewById(R.id.btnCheckPractice)
         btnNextQuestPractice = findViewById(R.id.btnNextQuestPractice)
         clPracticeContainer = findViewById(R.id.clPracticeQuestContainer)
+        ivWrongRight = findViewById(R.id.ivWrongRightPractice)
         crono = findViewById(R.id.practiceCrono)
 
         // Inicialización
@@ -106,6 +109,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
 
     fun siguientePregunta(){
         etAnswerPracticeField.clearFocus()
+        ivWrongRight.visibility = View.GONE
         if(!ejercicioRevisado){
             if(!etAnswerPracticeField.text.isEmpty()){ // si tecleó la respuesta
                 // se revisa el ejercicio
@@ -139,12 +143,16 @@ class PreguntaPracticaActivity : AppCompatActivity() {
                 if(!ejercicioRevisado){ // si el ejercicio no se ha revisado
                     // se revisa el ejercicio
                     if(revisaRespuestaConMargenDeError(respUsuario, preguntaActual.respuesta)){
+                        ivWrongRight.setImageResource(R.drawable.ic_right)
+                        ivWrongRight.visibility = View.VISIBLE
                         etAnswerPracticeField.setTextColor(resources.getColor(R.color.green))
                         btnCheckPractice.isEnabled = false
                         btnCheckPractice.alpha = 0.5f
                         aciertos += 1
                     }
                     else{
+                        ivWrongRight.setImageResource(R.drawable.ic_wrong)
+                        ivWrongRight.visibility = View.VISIBLE
                         etAnswerPracticeField.setTextColor(resources.getColor(R.color.red))
                         // si la respuesta está equivocada, se da la opción de ver la respuesta correcta
                         btnCheckPractice.text = "Ver respuesta"
