@@ -201,7 +201,7 @@
 
             <TextView
                 android:id="@+id/tvPracticeWarning"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:text="@string/advertencia"
@@ -211,10 +211,8 @@
                 android:visibility="visible"
                 app:layout_constraintBottom_toTopOf="@+id/btnStartPractice"
                 app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldGroup"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/outlinedTextFieldGroup"
-                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldGroup"
-                app:layout_constraintVertical_bias="0.52" />
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldGroup" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
