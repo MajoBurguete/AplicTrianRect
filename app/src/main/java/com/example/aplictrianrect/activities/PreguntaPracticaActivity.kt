@@ -111,6 +111,10 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         etAnswerPracticeField.clearFocus()
         ivWrongRight.visibility = View.GONE
         if(!ejercicioRevisado){
+            if(etAnswerPracticeField.text.toString() == "."){
+                createPracticeDialog("Escribe una respuesta valida", "Respuesta Invalida")
+                return
+            }
             if(!etAnswerPracticeField.text.isEmpty()){ // si tecleó la respuesta
                 // se revisa el ejercicio
                 // No es necesario mostrar si la respuesta es correcta o no
@@ -137,6 +141,13 @@ class PreguntaPracticaActivity : AppCompatActivity() {
             createPracticeDialog(messageDialog, "Respuesta correcta")
         }
         else{
+            if(etAnswerPracticeField.text.toString() == "."){
+                createPracticeDialog("Escribe una respuesta valida", "Respuesta Invalida")
+                outlinedTextFieldAnswerPractice.isEnabled = true
+                etAnswerPracticeField.isEnabled = true
+                btnCheckPractice.isEnabled = true
+                return
+            }
             if(!etAnswerPracticeField.text.isEmpty()){
                 etAnswerPracticeField.typeface = ResourcesCompat.getFont(applicationContext, R.font.montserrat_bold)
                 var respUsuario = etAnswerPracticeField.text.toString().toDouble()

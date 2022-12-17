@@ -118,7 +118,11 @@ class PreguntaExamenActivity : AppCompatActivity() {
         btnCheckTest.alpha = 1.0f
 
         tvTestInfo.text = preguntaActual.textoPregunta
-        ivProblema.setImageResource(preguntaActual.nombreImagen)
+        if(numeroDeEjercicio < 3) {
+            ivProblema.setImageResource(preguntaActual.nombreImagen)
+        } else {
+            ivProblema.visibility = View.INVISIBLE
+        }
         btnCheckTest.text = "Revisa"
         btnCheckTest.isEnabled = true
 
@@ -134,6 +138,10 @@ class PreguntaExamenActivity : AppCompatActivity() {
         etAnswerTestField.clearFocus()
         ivWrongRight.visibility = View.GONE
         if(!ejercicioRevisado){
+            if(etAnswerTestField.text.toString() == "."){
+                createPracticeDialog("Escribe una respuesta valida", "Respuesta Invalida")
+                return
+            }
             if(!etAnswerTestField.text.isEmpty()){ // si tecleó la respuesta
                 // se revisa el ejercicio
                 // No es necesario mostrar si la respuesta es correcta o no
@@ -170,6 +178,13 @@ class PreguntaExamenActivity : AppCompatActivity() {
             createPracticeDialog(messageDialog, "Respuesta correcta")
         }
         else{
+            if(etAnswerTestField.text.toString() == "."){
+                createPracticeDialog("Escribe una respuesta valida", "Respuesta Invalida")
+                outlinedTextFieldAnswerTest.isEnabled = true
+                etAnswerTestField.isEnabled = true
+                btnCheckTest.isEnabled = true
+                return
+            }
             if(!etAnswerTestField.text.isEmpty()){
                 etAnswerTestField.typeface = ResourcesCompat.getFont(applicationContext, R.font.montserrat_bold)
                 var respUsuario = etAnswerTestField.text.toString().toDouble()
