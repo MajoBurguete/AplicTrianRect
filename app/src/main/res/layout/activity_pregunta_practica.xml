@@ -102,42 +102,53 @@
                 android:paddingEnd="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivProblema">
+                app:layout_constraintTop_toBottomOf="@+id/ivProblema"
+                android:gravity="center">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlinedTextFieldAnswerPractice"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/answer_label"
-                    android:paddingStart="35dp"
-                    android:paddingEnd="15dp"
-                    android:textColorHint="@color/navy_blue"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
-                    app:boxStrokeColor="@color/navy_blue">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etAnswerPracticeField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
-                        android:inputType="number|numberDecimal"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:textColor="@color/navy_blue" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <ImageView
-                    android:id="@+id/ivWrongRightPractice"
+                <LinearLayout
+                    android:id="@+id/linearLayout9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_wrong"
-                    android:visibility="gone"/>
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/outlinedTextFieldAnswerPractice"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/answer_label"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="15dp"
+                        android:textColorHint="@color/navy_blue"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/navy_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAnswerPracticeField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:inputType="number|numberDecimal"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/navy_blue" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/ivWrongRightPractice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        app:srcCompat="@drawable/ic_wrong"
+                        android:visibility="gone"/>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -148,9 +159,9 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldAnswerPractice"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout7"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
                 <Button

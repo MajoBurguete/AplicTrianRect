@@ -197,7 +197,16 @@
                 android:paddingEnd="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivProblemaTest">
+                app:layout_constraintTop_toBottomOf="@+id/ivProblemaTest"
+                android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/outlinedTextFieldAnswerTest"
@@ -233,6 +242,7 @@
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ic_wrong"
                     android:visibility="gone"/>
+            </LinearLayout>
 
             </LinearLayout>
 
@@ -243,9 +253,9 @@
                 android:layout_marginTop="28dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/outlinedTextFieldAnswerTest"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout5"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
                 <Button
