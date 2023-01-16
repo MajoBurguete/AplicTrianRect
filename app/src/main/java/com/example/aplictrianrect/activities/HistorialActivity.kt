@@ -13,7 +13,7 @@ import com.example.aplictrianrect.models.Historial
 class HistorialActivity : AppCompatActivity() {
 
     private val appDatabase by lazy { AppDatabase.getDatabase(this).historialDao() }
-    lateinit var historial: ArrayList<Historial>
+    lateinit var historial: List<Historial>
 
     lateinit var ibBackFromHistorial: ImageButton
     lateinit var rvRecord: RecyclerView
@@ -27,7 +27,11 @@ class HistorialActivity : AppCompatActivity() {
         rvRecord = findViewById(R.id.rvRecord)
 
         // Inicialización
-        historial = appDatabase.getAll() as ArrayList<Historial>
+        if(appDatabase.getAll().isNotEmpty()){
+            historial = appDatabase.getAll().reversed()
+        } else{
+            historial = listOf()
+        }
 
         // Create adapter passing in the sample user data
         val adapter = HistorialAdapter(historial)

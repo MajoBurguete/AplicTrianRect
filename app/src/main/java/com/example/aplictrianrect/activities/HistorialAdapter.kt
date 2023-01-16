@@ -65,7 +65,7 @@ class HistorialAdapter (private val mHistorial: List<Historial>) : RecyclerView.
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         // Get the data model based on position
         val historial: Historial = mHistorial.get(position)
-        val isQuizOrPractice = historial.tipoActividad.equals("quiz")
+        val isQuizOrPractice = historial.tipoActividad == "quiz"
         var quizHolder:TestViewHolder
         var practiceHolder: PracticeViewHolder
 
@@ -102,6 +102,8 @@ class HistorialAdapter (private val mHistorial: List<Historial>) : RecyclerView.
             tvHourRecord = practiceHolder.tvHourRecord
             tvTypeRecord = practiceHolder.tvTypeRecord
             tvAciertosRecord = practiceHolder.tvAciertosRecord
+
+            tvTypeRecord.text = "Práctica"
         }
         // Set item views based on your views and data model
 
@@ -111,7 +113,6 @@ class HistorialAdapter (private val mHistorial: List<Historial>) : RecyclerView.
         tvTimeRecord.text = "Tiempo ${historial.tiempoCronometro}"
         tvDateRecord.text = historial.fecha
         tvHourRecord.text = historial.hora
-        tvTypeRecord.text = "Práctica"
         tvAciertosRecord.text = "${historial.puntos}/${historial.cantEjercicios}"
     }
 

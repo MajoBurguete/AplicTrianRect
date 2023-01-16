@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
     lateinit var etAnswerPracticeField: EditText
     lateinit var outlinedTextFieldAnswerPractice: TextInputLayout
     lateinit var btnCheckPractice: Button
+    lateinit var ivWrongRight: ImageView
     lateinit var btnNextQuestPractice: Button
     lateinit var clPracticeContainer: ConstraintLayout
 
@@ -55,6 +57,7 @@ class PreguntaPracticaActivity : AppCompatActivity() {
         btnCheckPractice = findViewById(R.id.btnCheckPractice)
         btnNextQuestPractice = findViewById(R.id.btnNextQuestPractice)
         clPracticeContainer = findViewById(R.id.clPracticeQuestContainer)
+        ivWrongRight = findViewById(R.id.ivWrongRightPractice)
         crono = findViewById(R.id.practiceCrono)
 
         // Inicialización
@@ -106,7 +109,12 @@ class PreguntaPracticaActivity : AppCompatActivity() {
 
     fun siguientePregunta(){
         etAnswerPracticeField.clearFocus()
+        ivWrongRight.visibility = View.GONE
         if(!ejercicioRevisado){
+            if(etAnswerPracticeField.text.toString() == "."){
+                createPracticeDialog("Escribe una respuesta valida", "Respuesta Invalida")
+                return
+            }
             if(!etAnswerPracticeField.text.isEmpty()){ // si tecleó la respuesta
                 // se revisa el ejercicio
                 // No es necesario mostrar si la respuesta es correcta o no
@@ -133,18 +141,29 @@ class PreguntaPracticaActivity : AppCompatActivity() {
             createPracticeDialog(messageDialog, "Respuesta correcta")
         }
         else{
+            if(etAnswerPracticeField.text.toString() == "."){
+                createPracticeDialog("Escribe una respuesta valida", "Respuesta Invalida")
+                outlinedTextFieldAnswerPractice.isEnabled = true
+                etAnswerPracticeField.isEnabled = true
+                btnCheckPractice.isEnabled = true
+                return
+            }
             if(!etAnswerPracticeField.text.isEmpty()){
                 etAnswerPracticeField.typeface = ResourcesCompat.getFont(applicationContext, R.font.montserrat_bold)
                 var respUsuario = etAnswerPracticeField.text.toString().toDouble()
                 if(!ejercicioRevisado){ // si el ejercicio no se ha revisado
                     // se revisa el ejercicio
                     if(revisaRespuestaConMargenDeError(respUsuario, preguntaActual.respuesta)){
+                        ivWrongRight.setImageResource(R.drawable.ic_right)
+                        ivWrongRight.visibility = View.VISIBLE
                         etAnswerPracticeField.setTextColor(resources.getColor(R.color.green))
                         btnCheckPractice.isEnabled = false
                         btnCheckPractice.alpha = 0.5f
                         aciertos += 1
                     }
                     else{
+                        ivWrongRight.setImageResource(R.drawable.ic_wrong)
+                        ivWrongRight.visibility = View.VISIBLE
                         etAnswerPracticeField.setTextColor(resources.getColor(R.color.red))
                         // si la respuesta está equivocada, se da la opción de ver la respuesta correcta
                         btnCheckPractice.text = "Ver respuesta"

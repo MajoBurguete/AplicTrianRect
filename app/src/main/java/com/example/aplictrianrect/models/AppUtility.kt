@@ -35,7 +35,8 @@ class AppUtility {
         return getHourAMorPM(currentHour, currentMinutes)
     }
 
-    fun getHourAMorPM(hour: Int, minutes: Int): String{
+    fun getHourAMorPM(hour: Int, minutesRec: Int): String{
+        val minutes = getMinutes(minutesRec)
         if(hour < 12){
             if(hour == 0){
                 return "12:$minutes am"
@@ -109,6 +110,43 @@ class AppUtility {
             }
         }
         return "12:$minutes pm"
+    }
+
+    fun getMinutes(minutes: Int): String{
+        Log.d("MINUTES", minutes.toString())
+        if(minutes < 10){
+            if(minutes == 0){
+                return "00"
+            }
+            if(minutes == 1){
+                return "01"
+            }
+            if(minutes == 2){
+                return "02"
+            }
+            if(minutes == 3){
+                return "03"
+            }
+            if(minutes == 4){
+                return "04"
+            }
+            if(minutes == 5){
+                return "05"
+            }
+            if(minutes == 6){
+                return "06"
+            }
+            if(minutes == 7){
+                return "07"
+            }
+            if(minutes == 8){
+                return "08"
+            }
+            if(minutes == 9){
+                return "09"
+            }
+        }
+        return minutes.toString();
     }
 
     fun getDay(day: Int): String {
